@@ -1,5 +1,5 @@
 This project is a general purpose project for react leaners.
-The UI for this clculaor was inspired from  https://www.figma.com/community/file/984658356416751911
+The UI for this calculator was inspired from  https://www.figma.com/community/file/984658356416751911
 
 # Getting Started with Create React App
 
