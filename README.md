@@ -1,4 +1,4 @@
-This project is a general purpose project for react leaners.
+This project is a general purpose project for react learners
 The UI for this calculator was inspired from  https://www.figma.com/community/file/984658356416751911
 
 # Getting Started with Create React App
