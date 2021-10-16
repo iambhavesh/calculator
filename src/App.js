@@ -1,10 +1,12 @@
 import "./App.css";
 import { useState } from "react";
+import del from './del.png';
+
 
 function App() {
   const [res, setres] = useState("");
   const [display, setdisplay] = useState("");
-  const [equals, setequals] = useState(false)
+  const [equals, setequals] = useState(false);
   const btnValues = [
     ["AC", "Del", "/", "*"],
     [7, 8, 9, "-"],
@@ -35,7 +37,7 @@ function App() {
   };
 
   const backspaceHandler = () => {
-    if (res === "" || equals=== true) {
+    if (res === "" || equals === true) {
       return;
     }
     const value = res.slice(0, -1);
@@ -86,7 +88,7 @@ function App() {
                   : () => onValuesClickHandler(btn)
               }
             >
-              {btn}
+              {btn === "Del" ? <img alt="del" src={del}/> : btn}
             </button>
           );
         })}
