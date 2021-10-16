@@ -1,7 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import del from './del.png';
-
+import del from "./del.png";
 
 function App() {
   const [res, setres] = useState("");
@@ -20,8 +19,14 @@ function App() {
   const onValuesClickHandler = (value) => {
     if (
       (operations.includes(value) && operations.includes(res.slice(-1))) ||
-      (operations.includes(value) && res === "")
+      (operations.includes(value) && res === "") ||
+      equals === true
     ) {
+      return;
+    }
+    if (operations.includes("/") && value === 0) {
+      alert("Can't divide by 'O'");
+      resetHandler();
       return;
     }
     setres(res + value);
@@ -30,10 +35,10 @@ function App() {
     }
   };
 
-  const resetHandler = (e) => {
-    e.preventDefault();
+  const resetHandler = () => {
     setres("");
     setdisplay("");
+    setequals(false);
   };
 
   const backspaceHandler = () => {
@@ -45,8 +50,11 @@ function App() {
   };
 
   const evaluateHandler = () => {
-    setequals(true);
-    setres(eval(res));
+    if (!operations.includes(res.slice(-1))) {
+      setequals(true);
+      setres(eval(res));
+      setdisplay(eval(res));
+    }
   };
   return (
     <div className="wrapper">
@@ -88,7 +96,7 @@ function App() {
                   : () => onValuesClickHandler(btn)
               }
             >
-              {btn === "Del" ? <img alt="del" src={del}/> : btn}
+              {btn === "Del" ? <img alt="del" src={del} /> : btn}
             </button>
           );
         })}
