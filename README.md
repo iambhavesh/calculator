@@ -1,3 +1,6 @@
+This project is a general purpose project for react leaners.
+The UI for this clculaor was inspired from  https://www.figma.com/community/file/984658356416751911
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
